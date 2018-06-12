@@ -9,11 +9,92 @@
   </head>
   <body>
     <!-- Add Your HTML here -->
+
+    <div class="container mt-3">
+
+      <h1>Tshirt Store</h1>
+      <hr>
+
+      <div class="row">
+        <div class="col-6 col-lg-2">
+          <section class="panel">
+            <div class="panel-body">
+              <img data-color="blanca" src="img/camiseta/thumbs/blanca.jpg" class="imgThumb img-thumbnail">
+              <img data-color="gris" src="img/camiseta/thumbs/gris.jpg" class="imgThumb img-thumbnail">
+              <img data-color="negra" src="img/camiseta/thumbs/negra.jpg" class="imgThumb img-thumbnail">
+              <img data-color="rojo" src="img/camiseta/thumbs/rojo.jpg" class="imgThumb img-thumbnail">
+              <img data-color="rosa" src="img/camiseta/thumbs/rosa.jpg" class="imgThumb img-thumbnail">
+              <img data-color="verde" src="img/camiseta/thumbs/verde.jpg" class="imgThumb img-thumbnail">
+            </div>
+          </section>
+        </div>
+
+        <div class="col-6 col-lg-5">
+          <section class="panel">
+            <div class="panel-body">
+                <img id="vistaPrevia" src="img/camiseta/large/blanca.jpg">
+            </div>
+          </section>
+        </div>
+
+        <div class="col-12 col-lg-5">
+          <section class="panel">
+            <div class="panel-body">
+                <h2>Camiseta Especial <small id="lblColor">blanca</small></h2>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum provident doloremque ipsam beatae neque quo saepe voluptatibus, sunt hic delectus nam perspiciatis ut atque, minus minima, rem reiciendis dolor harum!.
+                  <br>
+                  <br>
+                </p>
+                <p>
+                  <h4>Rating</h4>
+                  <img src="img/star1.png" class="imgRating">
+                  <img src="img/star1.png" class="imgRating">
+                  <img src="img/star1.png" class="imgRating">
+                  <img src="img/star1.png" class="imgRating">
+                  <img src="img/star2.png" class="imgRating">
+                  <br>
+                  <br>
+                </p>
+                <p>
+                  <h3>Precio <small>$10</small></h3>
+                </p>
+      
+            </div>
+          </section>
+        </div>
+
+      </div>
+    </div>
     
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="js/popper.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/scripts.js"></script>
+
+    <script>
+    
+      $(document).ready(function(){
+
+          let $image = $('#vistaPrevia');
+
+          $(".imgThumb").on('mouseover',function(){
+
+            let color = $(this).data('color');
+            let url   = 'img/camiseta/large/'+ color +'.jpg';
+
+            $image.attr('src',url);
+            $('#lblColor').text(color);
+
+          });
+
+
+      });
+    
+    
+    </script>
+
+
   </body>
 </html>
